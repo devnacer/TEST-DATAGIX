@@ -4,7 +4,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
 <div class="sidebar" id="side_nav">
   <div class="header-box px-2 pt-3 pb-4 d-flex justify-content-between">
-    <h1 class="fs-4"><a href="index.php" class="text-white">DATAGIX</a></h1>
+    <h1 class="fs-4"><a href="index.php" class="text-white text-decoration-none">DATA<span class="text-primary">GIX</span></a></h1>
     <button class="btn d-md-none d-block close-btn px-1 py-0 text-white"><i class="fa-regular fa-circle-xmark"></i></button>
   </div>
 
