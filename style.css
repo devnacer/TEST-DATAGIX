@@ -8,6 +8,7 @@ body{
     max-width: 250px;
     transition: all 0.3s;
    }
+
    .content{
       min-height: 100vh;
       width: 100%;
@@ -29,6 +30,11 @@ body{
    }
    .sidebar li a{
     color: #fff;
+   }
+
+   .mb{
+    margin-bottom: 22rem;
+    border: #000 6px solid;
    }
    
    @media(max-width: 767px){

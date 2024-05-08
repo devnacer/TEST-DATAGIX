@@ -12,3 +12,5 @@ document.querySelector(".open-btn").addEventListener("click", function () {
 document.querySelector(".close-btn").addEventListener("click", function () {
   document.querySelector(".sidebar").classList.remove("active");
 });
+
+
