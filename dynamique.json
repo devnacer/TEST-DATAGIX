@@ -1,0 +1,110 @@
+{
+    "Now": "2024-05-07T07:24:29.5783766+00:00",
+    "list": [
+    {
+    "Id": 253035,
+    "Caller": "10001 Trunk-Secretariat-OC1052979-INPUT (0679396337)",
+    "Callee": "121 Sec-Mélanie Arnaud",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-05-07T07:23:21+00:00",
+    "EstablishedAt": "2024-05-07T07:23:21+00:00"
+    },
+    {
+    "Id": 253043,
+    "Caller": "10001 Trunk-Secretariat-OC1052979-INPUT (0477584609)",
+    "Callee": "153 sec-Julie",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-05-07T07:19:42+00:00",
+    "EstablishedAt": "2024-05-07T07:19:42+00:00"
+    },
+    {
+    "Id": 253058,
+    "Caller": "10000 Trunk1-OC1052967-INPUT (0613387903)",
+    "Callee": "150 Sec-Marie DESCHAMPS",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-05-07T07:21:05+00:00",
+    "EstablishedAt": "2024-05-07T07:21:05+00:00"
+    },
+    {
+    "Id": 253065,
+    "Caller": "10000 Trunk1-OC1052967-INPUT (0661060251)",
+    "Callee": "155 Sec-Martine MARMAN",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-05-07T07:22:12+00:00",
+    "EstablishedAt": "2024-05-07T07:22:12+00:00"
+    },
+    {
+    "Id": 253067,
+    "Caller": "10001 Trunk-Secretariat-OC1052979-INPUT (0651900484)",
+    "Callee": "156 SEC-Elise Chauvet",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-05-07T07:22:22+00:00",
+    "EstablishedAt": "2024-05-07T07:22:22+00:00"
+    },
+    {
+    "Id": 253068,
+    "Caller": "10001 Trunk-Secretariat-OC1052979-INPUT (00330646080453)",
+    "Callee": "158 SEC-massila SalemKour",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-05-07T07:22:22+00:00",
+    "EstablishedAt": "2024-05-07T07:22:22+00:00"
+    },
+    {
+    "Id": 253070,
+    "Caller": "10000 Trunk1-OC1052967-INPUT (0784678722)",
+    "Callee": "311 Sec-JeanMichel",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-05-07T07:22:40+00:00",
+    "EstablishedAt": "2024-05-07T07:22:40+00:00"
+    },
+    {
+    "Id": 253074,
+    "Caller": "10001 Trunk-Secretariat-OC1052979-INPUT (0783325562)",
+    "Callee": "203 Sec-Katia ONIXCALL",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-05-07T07:23:00+00:00",
+    "EstablishedAt": "2024-05-07T07:23:00+00:00"
+    },
+    {
+    "Id": 253075,
+    "Caller": "10000 Trunk1-OC1052967-INPUT (0618353392)",
+    "Callee": "909 Plantier*909*",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-05-07T07:23:05+00:00",
+    "EstablishedAt": "2024-05-07T07:23:05+00:00"
+    },
+    {
+    "Id": 253079,
+    "Caller": "10001 Trunk-Secretariat-OC1052979-INPUT (0677193301)",
+    "Callee": "937 Dr LACHHEB*937*",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-05-07T07:23:42+00:00",
+    "EstablishedAt": "2024-05-07T07:23:42+00:00"
+    },
+    {
+    "Id": 253080,
+    "Caller": "10000 Trunk1-OC1052967-INPUT (0607399282)",
+    "Callee": "122 Sec-Elodie Reus",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-05-07T07:23:54+00:00",
+    "EstablishedAt": "2024-05-07T07:23:54+00:00"
+    },
+    {
+    "Id": 253082,
+    "Caller": "10001 Trunk-Secretariat-OC1052979-INPUT (00330683231653)",
+    "Callee": "890 Polyclinique Limoges*890*",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-05-07T07:24:06+00:00",
+    "EstablishedAt": "2024-05-07T07:24:06+00:00"
+    },
+    {
+    "Id": 253083,
+    "Caller": "10001 Trunk-Secretariat-OC1052979-INPUT (0660567947)",
+    "Callee": "957 Dr Tanchon et Viguie*957*",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-05-07T07:24:25+00:00",
+    "EstablishedAt": "2024-05-07T07:24:25+00:00"
+    }
+    ],
+    "licenseRestricted": false
+    }

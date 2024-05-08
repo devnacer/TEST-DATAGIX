@@ -1,0 +1,86 @@
+{
+    "Now": "2024-03-13T13:17:50.5126015+00:00",
+    "list": [
+    {
+    "Id": 149946,
+    "Caller": "10001 Trunk-Secretariat-OC1052979-INPUT (0670363033)",
+    "Callee": "161 Sec-Corine Michalak",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-03-13T13:10:10+00:00",
+    "EstablishedAt": "2024-03-13T13:10:10+00:00"
+    },
+    {
+    "Id": 149955,
+    "Caller": "158 SEC-massila SalemKour",
+    "Callee": "10003 Trunk-Output-OC1050447 (0752035507)",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-03-13T13:13:59+00:00",
+    "EstablishedAt": "2024-03-13T13:13:59+00:00"
+    },
+    {
+    "Id": 149957,
+    "Caller": "10000 Trunk1-OC1052967-INPUT (0644287664)",
+    "Callee": "153 sec-Julie",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-03-13T13:14:49+00:00",
+    "EstablishedAt": "2024-03-13T13:14:49+00:00"
+    },
+    {
+    "Id": 149960,
+    "Caller": "10001 Trunk-Secretariat-OC1052979-INPUT (0618137155)",
+    "Callee": "150 Sec-Marie DESCHAMPS",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-03-13T13:15:04+00:00",
+    "EstablishedAt": "2024-03-13T13:15:04+00:00"
+    },
+    {
+    "Id": 149961,
+    "Caller": "10001 Trunk-Secretariat-OC1052979-INPUT (0749093423)",
+    "Callee": "913 MSP Prades*913*",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-03-13T13:15:30+00:00",
+    "EstablishedAt": "2024-03-13T13:15:30+00:00"
+    },
+    {
+    "Id": 149967,
+    "Caller": "10001 Trunk-Secretariat-OC1052979-INPUT (0162550373)",
+    "Callee": "887 OFF DR Manel",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-03-13T13:16:48+00:00",
+    "EstablishedAt": "2024-03-13T13:16:48+00:00"
+    },
+    {
+    "Id": 149968,
+    "Caller": "10001 Trunk-Secretariat-OC1052979-INPUT (0637147415)",
+    "Callee": "201 Sec-Laurance ONIXCALL",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-03-13T13:16:51+00:00",
+    "EstablishedAt": "2024-03-13T13:16:51+00:00"
+    },
+    {
+    "Id": 149969,
+    "Caller": "10000 Trunk1-OC1052967-INPUT (0767675305)",
+    "Callee": "960 Cabinet médicale de la Grande Ramée*960*",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-03-13T13:16:58+00:00",
+    "EstablishedAt": "2024-03-13T13:16:58+00:00"
+    },
+    {
+    "Id": 149970,
+    "Caller": "10000 Trunk1-OC1052967-INPUT (0320759131)",
+    "Callee": "909 Plantier*909*",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-03-13T13:17:06+00:00",
+    "EstablishedAt": "2024-03-13T13:17:06+00:00"
+    },
+    {
+    "Id": 149971,
+    "Caller": "10000 Trunk1-OC1052967-INPUT (0788730651)",
+    "Callee": "909 Plantier*909*",
+    "Status": "Talking",
+    "LastChangeStatus": "2024-03-13T13:17:25+00:00",
+    "EstablishedAt": "2024-03-13T13:17:25+00:00"
+    }
+    ],
+    "licenseRestricted": false
+    }
