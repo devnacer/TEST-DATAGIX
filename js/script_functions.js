@@ -50,7 +50,7 @@ function displayMissedCallsInfo_table1(data) {
       // Extraire uniquement le numéro de l'appelant entre parenthèses
       const callerNumber = call.Caller.match(/\((\d+)\)/)[1];
 
-        // Extraire uniquement le nom du cabinet du callee
+        // Extraire uniquement le  callee
         const CalleeMatch = call.Callee.match(/(?:[^\d*]+\s*)+/); // Correspond à chaque mot alphabétique et espace dans la chaîne
         const Callee = CalleeMatch ? CalleeMatch[0] : "";
       console.log(Callee);
