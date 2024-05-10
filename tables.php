@@ -41,14 +41,15 @@
                 <th scope="col">ID</th>
                 <th scope="col">Caller</th>
                 <th scope="col">Callee</th>
+                <td>Duration</td>
               </tr>
             </thead>
             <tbody id="callsBody_table1">
               <!-- <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    exemple d'un <tr>
+                    <td>149971</td>
+                    <td>0752035507</td>
+                    <td>Cabinet médicale de la Grande Ramée</td>
                   </tr> -->
             </tbody>
           </table>
@@ -58,7 +59,7 @@
 
 
         <!--____________table2______________ -->
-        <div class="container" id="tab2">
+        <!-- <div class="container" id="tab2">
 
           <div class="fs-5 text-center">
             <h2>Nombre APPELS TOTAL EN COURS PAR LES AGENT
@@ -72,20 +73,15 @@
               </tr>
             </thead>
             <tbody id="agentCallsBody_table2">
-              <!-- <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr> -->
+            
             </tbody>
           </table>
-        </div>
+        </div> -->
         <!--_________end_table2______________ -->
 
 
         <!--_________table3______________ -->
-        <div class="container" id="tab3">
+        <!-- <div class="container" id="tab3">
           <div class="fs-5 text-center">
             <h2>Nombre d’appel décroché en cours</h2>
           </div>
@@ -102,21 +98,16 @@
               </tr>
             </thead>
             <tbody id="callsBody_table3">
-              <!-- <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr> -->
+    
             </tbody>
           </table>
 
-        </div>
+        </div> -->
         <!--_________end_table3______________ -->
 
 
         <!--_________table4______________ -->
-        <div class="container" id="tab4">
+        <!-- <div class="container" id="tab4">
           <div class="fs-5 text-center">
             <h2>Nombre d’appel sortant en cours</h2>
           </div>
@@ -133,15 +124,10 @@
               </tr>
             </thead>
             <tbody id="callsBody_table4">
-              <!-- <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr> -->
+             
             </tbody>
           </table>
-        </div>
+        </div> -->
         <!--_________end_table4______________ -->
       </div>
     </div>

@@ -6,9 +6,9 @@
   </div>
 
   <ul class="list-unstyled px-2">
-    <li><a href="#tab1" class="active text-decoration-none px-3 py-2 d-block">Nombre d’appel Non décroché dynamique sur sample [ Tallking ]</a></li>
-    <li ><a href="#tab2" class="text-decoration-none px-3 py-2 d-block">Nombre APPELS TOTAL EN COURS PAR LES AGENT</a></li>
-    <li><a href="#tab3" class="text-decoration-none px-3 py-2 d-block">Nombre d’appel décroché en cours</a></li>
-    <li><a href="#tab4" class="text-decoration-none px-3 py-2 d-block">Nombre d’appel sortant en cours</a></li>
+    <li><a href="tables.php#tab1" class="active text-decoration-none px-3 py-2 d-block">Nombre d’appel Non décroché dynamique sur sample [ Tallking ]</a></li>
+    <li ><a href="tables.php#tab2" class="text-decoration-none px-3 py-2 d-block">Nombre APPELS TOTAL EN COURS PAR LES AGENT</a></li>
+    <li><a href="tables.php#tab3" class="text-decoration-none px-3 py-2 d-block">Nombre d’appel décroché en cours</a></li>
+    <li><a href="tables.php#tab4" class="text-decoration-none px-3 py-2 d-block">Nombre d’appel sortant en cours</a></li>
   </ul>
 </div>
