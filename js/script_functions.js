@@ -11,8 +11,8 @@ window.onload = function () {
       // displayAgentCallsCount_table2(data);
 
       // //  table3
-      // displayCallsInfo_table3(data, [149968, 149960, 149957]);
-      // updateActiveCallsCount_table3();
+      displayCallsInfo_table3(data, [149968, 149960, 149957]);
+      updateActiveCallsCount_table3();
       
       // //  table4
       // displayOutgoingCallsInfo_table4(data, [149955]);
@@ -25,21 +25,6 @@ window.onload = function () {
 };
 
 ///_____table1__functions________________
-// function displayMissedCallsInfo_table1(data) {
-//   const missedCallsTable = document.getElementById("callsBody_table1");
-
-//   data.list.forEach((call) => {
-//     if (call.Status === "Talking") {
-//       const row = `
-//                 <tr>
-//                     <th scope="row">${call.Id}</th>
-//                     <td>${call.Callee}</td>
-//                     <td>${call.Caller}</td>
-//                 </tr>`;
-//       missedCallsTable.innerHTML += row;
-//     }
-//   });
-// }
 // Fonction pour afficher les appels non décrochés dans la table 1 avec les informations spécifiées
 function displayMissedCallsInfo_table1(data) {
   const missedCallsTable = document.getElementById("callsBody_table1");
@@ -53,7 +38,6 @@ function displayMissedCallsInfo_table1(data) {
         // Extraire uniquement le  callee
         const CalleeMatch = call.Callee.match(/(?:[^\d*]+\s*)+/); // Correspond à chaque mot alphabétique et espace dans la chaîne
         const Callee = CalleeMatch ? CalleeMatch[0] : "";
-      console.log(Callee);
 
       // Calculer la durée de l'appel
       const duration = calculateDuration(data.Now, call.EstablishedAt);
@@ -70,13 +54,6 @@ function displayMissedCallsInfo_table1(data) {
     }
   });
 }
-
-
-
-
-
-
-
 
 function updateActiveCallsCount_table1() {
   const callsRows = document.querySelectorAll("#callsBody_table1 tr");
@@ -157,6 +134,45 @@ function calculateDuration(now, establishedAt) {
 //   const seconds = Math.floor(durationInSeconds % 60);
 //   return `${minutes} min ${seconds} sec`;
 // }
+function displayCallsInfo_table3(data, ids) {
+  const callsTable = document.getElementById("callsBody_table3");
+  callsTable.innerHTML = ""; // Effacer le contenu précédent du tableau
+
+  ids.forEach((id) => {
+    const call = data.list.find((call) => call.Id === id);
+    if (call) {
+      const duration = calculateDuration(data.Now, call.EstablishedAt);
+
+      // Extraire uniquement le numéro de l'appelant (caller)
+      const callerNumberMatch = call.Caller.match(/\((\d+)\)/);
+      const callerNumber = callerNumberMatch ? callerNumberMatch[1] : "";
+
+      // Extraire uniquement le nom du destinataire (callee)
+      const calleeNameMatch = call.Callee.match(/(?:[^\d*]+\s*)+/);
+      const calleeName = calleeNameMatch ? calleeNameMatch[0] : "";
+
+      const row = `<tr><td>${call.Id}</td><td>${callerNumber}</td><td>${calleeName}</td><td>${duration}</td></tr>`;
+      callsTable.innerHTML += row;
+    }
+  });
+}
+
+
+function updateActiveCallsCount_table3() {
+  const callsRows = document.querySelectorAll("#callsBody_table3 tr");
+  const activeCallsCount = callsRows.length;
+  document.getElementById("nbCalls_table3").textContent = activeCallsCount;
+  // console.log(activeCallsCount);
+}
+
+function calculateDuration(now, establishedAt) {
+  const establishedTime = new Date(establishedAt);
+  const nowTime = new Date(now);
+  const durationInSeconds = (nowTime - establishedTime) / 1000;
+  const minutes = Math.floor(durationInSeconds / 60);
+  const seconds = Math.floor(durationInSeconds % 60);
+  return `${minutes} min ${seconds} sec`;
+}
 ///__end_table3__functions________________
 
 

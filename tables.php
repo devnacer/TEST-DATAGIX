@@ -32,7 +32,7 @@
           </div>
 
           <div class="text-center">
-            <p>Nombre d’appel Non décroché dynamique sur sample [ Tallking ]: <span id="nbCalls_table1" class="badge bg-dark"></span></p>
+            <p>Nombre d’appel Non décroché dynamique sur sample [ Tallking ]: <span id="nbCalls_table1" class="badge bg-primary" style="font-size: larger;"></span></p>
           </div>
 
           <table class="table mt-3 mb-5">
@@ -81,19 +81,19 @@
 
 
         <!--_________table3______________ -->
-        <!-- <div class="container" id="tab3">
+        <div class="container" id="tab3">
           <div class="fs-5 text-center">
             <h2>Nombre d’appel décroché en cours</h2>
           </div>
           <div class="text-center">
-            <p>Nombre d’appel décroché en cours: <span id="nbCalls_table3" class="badge bg-dark"></span></p>
+            <p>Nombre d’appel décroché en cours: <span id="nbCalls_table3" class="badge bg-primary" style="font-size: larger;"></span></p>
           </div>
           <table class="table mt-3 mb-5">
             <thead>
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Caller</th>
-                <th scope="col">Callee</th>
+                <th scope="col">Caller</th>
                 <th scope="col">Duration</th>
               </tr>
             </thead>
@@ -102,7 +102,7 @@
             </tbody>
           </table>
 
-        </div> -->
+        </div> 
         <!--_________end_table3______________ -->
 
 
