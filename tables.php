@@ -45,12 +45,6 @@
               </tr>
             </thead>
             <tbody id="callsBody_table1">
-              <!-- <tr>
-                    exemple d'un <tr>
-                    <td>149971</td>
-                    <td>0752035507</td>
-                    <td>Cabinet médicale de la Grande Ramée</td>
-                  </tr> -->
             </tbody>
           </table>
 
@@ -59,24 +53,28 @@
 
 
         <!--____________table2______________ -->
-        <!-- <div class="container" id="tab2">
+        <div class="container" id="tab2">
 
           <div class="fs-5 text-center">
-            <h2>Nombre APPELS TOTAL EN COURS PAR LES AGENT
-            </h2>
+            <h2>Nombre Appels Total En Cours Par Les Agent</h2>
+          </div>
+          <div class="text-center">
+            <p>Nombre d’appel total en cours : <span id="nbCalls_table2" class="badge bg-primary" style="font-size: larger;"></span></p>
           </div>
           <table class="table mt-3 mb-5">
             <thead>
               <tr>
-                <th scope="col">Agent</th>
-                <th scope="col">Nombre APPELS TOTAL EN COURS</th>
+              <th scope="col">ID</th>
+                <th scope="col">Caller</th>
+                <th scope="col">Callee</th>
+                <td>Duration</td>
               </tr>
             </thead>
             <tbody id="agentCallsBody_table2">
             
             </tbody>
           </table>
-        </div> -->
+        </div>
         <!--_________end_table2______________ -->
 
 
