@@ -15,8 +15,8 @@ window.onload = function () {
       updateActiveCallsCount_table3();
       
       // //  table4
-      // displayOutgoingCallsInfo_table4(data, [149955]);
-      // updateOutgoingCallsCount_table4();
+      displayOutgoingCallsInfo_table4(data, [149955]);
+      updateOutgoingCallsCount_table4();
       
     })
     .catch((error) =>
@@ -177,23 +177,32 @@ function calculateDuration(now, establishedAt) {
 
 
 ///__end_table4__functions________________
-// function displayOutgoingCallsInfo_table4(data, ids) {
-//   const callsTable = document.getElementById("callsBody_table4");
-//   callsTable.innerHTML = ""; // Effacer le contenu précédent du tableau
+function displayOutgoingCallsInfo_table4(data, ids) {
+  const callsTable = document.getElementById("callsBody_table4");
+  callsTable.innerHTML = ""; // Effacer le contenu précédent du tableau
 
-//   ids.forEach((id) => {
-//     const call = data.list.find((call) => call.Id === id);
-//     if (call) {
-//       const duration = calculateDuration(data.Now, call.EstablishedAt);
-//       const row = `<tr><td>${call.Id}</td><td>${call.Callee}</td><td>${call.Caller}</td><td>${duration}</td></tr>`;
-//       callsTable.innerHTML += row;
-//     }
-//   });
-// }
+  ids.forEach((id) => {
+    const call = data.list.find((call) => call.Id === id);
+    if (call) {
+      const duration = calculateDuration(data.Now, call.EstablishedAt);
 
-// function updateOutgoingCallsCount_table4() {
-//   const callsRows = document.querySelectorAll("#callsBody_table4 tr");
-//   const outgoingCallsCount = callsRows.length;
-//   document.getElementById("nbCalls_table4").textContent = outgoingCallsCount;
-// }
+      // Extraire uniquement le numéro de l'appelant (caller)
+      const callerNumberMatch = call.Callee.match(/\((\d+)\)/);
+      const callerNumber = callerNumberMatch ? callerNumberMatch[1] : "";
+
+      // Extraire uniquement le nom du destinataire (caller)
+      const calleeNameMatch = call.Caller.match(/(?:[^\d*]+\s*)+/);
+      const calleeName = calleeNameMatch ? calleeNameMatch[0] : "";
+
+      const row = `<tr><td>${call.Id}</td><td>${calleeName}</td><td>${callerNumber}</td><td>${duration}</td></tr>`;
+      callsTable.innerHTML += row;
+    }
+  });
+}
+
+function updateOutgoingCallsCount_table4() {
+  const callsRows = document.querySelectorAll("#callsBody_table4 tr");
+  const outgoingCallsCount = callsRows.length;
+  document.getElementById("nbCalls_table4").textContent = outgoingCallsCount;
+}
 ///__end_table4__functions________________

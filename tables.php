@@ -107,19 +107,19 @@
 
 
         <!--_________table4______________ -->
-        <!-- <div class="container" id="tab4">
+        <div class="container" id="tab4">
           <div class="fs-5 text-center">
             <h2>Nombre d’appel sortant en cours</h2>
           </div>
           <div class="text-center">
-            <p>Nombre d’appel sortant en cours: <span id="nbCalls_table4" class="badge bg-dark"></span></p>
+            <p>Nombre d’appel sortant en cours: <span id="nbCalls_table4" class="badge bg-primary" style="font-size: larger;"></span></p>
           </div>
           <table class="table mt-3 mb-5">
             <thead>
               <tr>
-                <th scope="col">ID</th>
+              <th scope="col">ID</th>
                 <th scope="col">Caller</th>
-                <th scope="col">Callee</th>
+                <th scope="col">Caller</th>
                 <th scope="col">Duration</th>
               </tr>
             </thead>
@@ -127,7 +127,7 @@
              
             </tbody>
           </table>
-        </div> -->
+        </div> 
         <!--_________end_table4______________ -->
       </div>
     </div>
