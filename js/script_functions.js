@@ -1,11 +1,15 @@
 window.onload = function () {
   // Chargement du fichier JSON sample
-  fetch("sample.json")
+  fetch("https://help.secretariat360.fr/data/1258xbpdnsbldbdxnbgdgbx.json")
     .then((response) => response.json())
     .then((data) => {
       //  table1
       displayMissedCallsInfo_table1(data);
       updateActiveCallsCount_table1();
+
+      //  table2
+      displayAgentCallsCount_table2(data);
+      updateActiveCallsCount_table2();
 
       // //  table3
       displayCallsInfo_table3(data, [149968, 149960, 149957]);
@@ -19,16 +23,12 @@ window.onload = function () {
       console.error("Erreur lors du chargement du fichier JSON sample :", error)
     );
 
-  fetch("dynamique.json")
-    .then((response) => response.json())
-    .then((data) => {
-      //  table2
-      displayAgentCallsCount_table2(data);
-      updateActiveCallsCount_table2();
-    })
-    .catch((error) =>
-      console.error("Erreur lors du chargement du fichier JSON sample :", error)
-    );
+  // fetch("dynamique.json")
+  //   .then((response) => response.json())
+  //   .then((data) => {})
+  //   .catch((error) =>
+  //     console.error("Erreur lors du chargement du fichier JSON sample :", error)
+  //   );
 };
 
 ///_____table1__functions________________
