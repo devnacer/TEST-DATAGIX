@@ -1,37 +1,40 @@
 window.onload = function () {
   // Chargement du fichier JSON sample
-  fetch("https://help.secretariat360.fr/data/1258xbpdnsbldbdxnbgdgbx.json")
-  //  fetch("sample.json")
+  fetch("sample.json")
     .then((response) => response.json())
     .then((data) => {
       //  table1
       displayMissedCallsInfo_table1(data);
       updateActiveCallsCount_table1();
 
-
       // //  table3
       displayCallsInfo_table3(data, [149968, 149960, 149957]);
       updateActiveCallsCount_table3();
-
-      // // //  table4
+      
+      // //  table4
       displayOutgoingCallsInfo_table4(data, [149955]);
       updateOutgoingCallsCount_table4();
-
-      //  table2
-       displayAgentCallsCount_table2(data);
-       updateActiveCallsCount_table2();
       
     })
     .catch((error) =>
       console.error("Erreur lors du chargement du fichier JSON sample :", error)
     );
+    
 
-  // fetch("dynamique.json")
-  //   .then((response) => response.json())
-  //   .then((data) => {})
-  //   .catch((error) =>
-  //     console.error("Erreur lors du chargement du fichier JSON sample :", error)
-  //   );
+    fetch("dynamique.json")
+    .then((response) => response.json())
+    .then((data) => {
+    
+
+      //  table2
+      displayAgentCallsCount_table2(data);
+      updateActiveCallsCount_table2();
+
+      
+    })
+    .catch((error) =>
+      console.error("Erreur lors du chargement du fichier JSON sample :", error)
+    );
 };
 
 ///_____table1__functions________________
@@ -41,13 +44,13 @@ function displayMissedCallsInfo_table1(data) {
 
   data.list.forEach((call) => {
     // Vérifier si l'appel est en état "Talking" et si le Callee contient une étoile suivie de nombres puis d'une autre étoile
-    if (call.Status === "Talking" && /\*\d+\*/.test(call.Callee)) {
+    if (call.Status === "Talking" && /\*\d+\*/.test(call.Callee)) { 
       // Extraire uniquement le numéro de l'appelant entre parenthèses
       const callerNumber = call.Caller.match(/\((\d+)\)/)[1];
 
-      // Extraire uniquement le  callee
-      const CalleeMatch = call.Callee.match(/(?:[^\d*]+\s*)+/); // Correspond à chaque mot alphabétique et espace dans la chaîne
-      const Callee = CalleeMatch ? CalleeMatch[0] : "";
+        // Extraire uniquement le  callee
+        const CalleeMatch = call.Callee.match(/(?:[^\d*]+\s*)+/); // Correspond à chaque mot alphabétique et espace dans la chaîne
+        const Callee = CalleeMatch ? CalleeMatch[0] : "";
 
       // Calculer la durée de l'appel
       const duration = calculateDuration(data.Now, call.EstablishedAt);
@@ -83,18 +86,22 @@ function calculateDuration(now, establishedAt) {
 
 
 ///__________table2__functions________________
+
 function displayAgentCallsCount_table2(data) {
   // Get reference to the table body element
   const missedCallsTable = document.getElementById("agentCallsBody_table2");
 
   // Filter calls based on status and callee pattern
-  const filteredCalls = data.list.filter((call) => {
-    // Check if call is in "Talking" state and callee doesn't contain asterisk-digit-asterisk pattern
-    return call.Status === "Talking" && !/\*\d+\*/.test(call.Callee);
-  });
+  const filteredCalls = data.list.filter(
+    (call) => {
+      // Check if call is in "Talking" state and callee doesn't contain asterisk-digit-asterisk pattern
+      return call.Status === "Talking" && !/\*\d+\*/.test(call.Callee);
+    }
+  );
 
   // Loop through filtered calls
   filteredCalls.forEach((call) => {
+    
     const callerNumber = extractCallerNumber(call.Caller);
     const callee = extractCallee(call.Callee);
     const duration = calculateDuration(data.Now, call.EstablishedAt);
@@ -127,17 +134,9 @@ function updateActiveCallsCount_table2() {
   const callsRows = document.querySelectorAll("#agentCallsBody_table2 tr");
   const activeCallsCount = callsRows.length;
   document.getElementById("nbCalls_table2").textContent = activeCallsCount;
-  console.log(activeCallsCount);
-
-}
-function updateActiveCallsCount_table3() {
-  const callsRows = document.querySelectorAll("#callsBody_table2 tr");
-  const activeCallsCount = callsRows.length;
-  document.getElementById("nbCalls_table3").textContent = activeCallsCount;
 }
 
 
-///___table3__functions________________
 function displayCallsInfo_table3(data, ids) {
   const callsTable = document.getElementById("callsBody_table3");
   callsTable.innerHTML = ""; // Effacer le contenu précédent du tableau
@@ -161,10 +160,12 @@ function displayCallsInfo_table3(data, ids) {
   });
 }
 
+
 function updateActiveCallsCount_table3() {
   const callsRows = document.querySelectorAll("#callsBody_table3 tr");
   const activeCallsCount = callsRows.length;
   document.getElementById("nbCalls_table3").textContent = activeCallsCount;
+  // console.log(activeCallsCount);
 }
 
 function calculateDuration(now, establishedAt) {
@@ -177,7 +178,8 @@ function calculateDuration(now, establishedAt) {
 }
 ///__end_table3__functions________________
 
-///___table4__functions________________
+
+///__end_table4__functions________________
 function displayOutgoingCallsInfo_table4(data, ids) {
   const callsTable = document.getElementById("callsBody_table4");
   callsTable.innerHTML = ""; // Effacer le contenu précédent du tableau

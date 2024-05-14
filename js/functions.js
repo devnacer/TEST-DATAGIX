@@ -1,43 +1,48 @@
-window.onload = function () {
-  // Chargement du fichier JSON sample
-  fetch("https://help.secretariat360.fr/data/1258xbpdnsbldbdxnbgdgbx.json")
-  //  fetch("sample.json")
-    .then((response) => response.json())
-    .then((data) => {
-      //  table1
-      displayMissedCallsInfo_table1(data);
-      updateActiveCallsCount_table1();
-
-
-      // //  table3
-      displayCallsInfo_table3(data, [149968, 149960, 149957]);
-      updateActiveCallsCount_table3();
-
-      // // //  table4
-      displayOutgoingCallsInfo_table4(data, [149955]);
-      updateOutgoingCallsCount_table4();
-
-      //  table2
-       displayAgentCallsCount_table2(data);
-       updateActiveCallsCount_table2();
-      
-    })
-    .catch((error) =>
-      console.error("Erreur lors du chargement du fichier JSON sample :", error)
+async function fetchDataAndDisplay() {
+  try {
+    // Utilisation du proxy PHP pour contourner le problème CORS
+    const response = await fetch(
+      "proxy.php?url=https://help.secretariat360.fr/data/1258xbpdnsbldbdxnbgdgbx.json"
     );
 
-  // fetch("dynamique.json")
-  //   .then((response) => response.json())
-  //   .then((data) => {})
-  //   .catch((error) =>
-  //     console.error("Erreur lors du chargement du fichier JSON sample :", error)
-  //   );
-};
+    // Vérifier si la réponse est OK
+    if (!response.ok) {
+      throw new Error("Erreur lors du chargement du fichier JSON");
+    }
+
+    // Convertir la réponse en JSON
+    const data = await response.json();
+
+    //  table1
+    displayMissedCallsInfo_table1(data);
+    updateActiveCallsCount_table1();
+
+    // //  table3
+    displayCallsInfo_table3(data, [149968, 149960, 149957]);
+    updateActiveCallsCount_table3();
+
+    //     // // //  table4
+    displayOutgoingCallsInfo_table4(data, [149955]);
+    updateOutgoingCallsCount_table4();
+
+    // table2
+    displayAgentCallsCount_table2(data);
+    updateActiveCallsCount_table2();
+  } catch (error) {
+    console.error("Erreur lors du chargement du fichier JSON sample :", error);
+  } finally {
+    // Redémarrer fetchDataAndDisplay après 5 secondes
+    timeoutId = setTimeout(fetchDataAndDisplay, 5000);
+  }
+}
+
+fetchDataAndDisplay();
 
 ///_____table1__functions________________
 // Fonction pour afficher les appels non décrochés dans la table 1 avec les informations spécifiées
 function displayMissedCallsInfo_table1(data) {
   const missedCallsTable = document.getElementById("callsBody_table1");
+  missedCallsTable.innerHTML = "";
 
   data.list.forEach((call) => {
     // Vérifier si l'appel est en état "Talking" et si le Callee contient une étoile suivie de nombres puis d'une autre étoile
@@ -81,11 +86,11 @@ function calculateDuration(now, establishedAt) {
 }
 ///______end_table1__functions________________
 
-
 ///__________table2__functions________________
 function displayAgentCallsCount_table2(data) {
   // Get reference to the table body element
   const missedCallsTable = document.getElementById("agentCallsBody_table2");
+  missedCallsTable.innerHTML = "";
 
   // Filter calls based on status and callee pattern
   const filteredCalls = data.list.filter((call) => {
@@ -101,12 +106,12 @@ function displayAgentCallsCount_table2(data) {
 
     // Construct table row using template literal
     const row = `
-      <tr>
-        <td>${call.Id}</td>
-        <td>${callerNumber}</td>
-        <td>${callee}</td>
-        <td>${duration}</td>
-      </tr>`;
+        <tr>
+          <td>${call.Id}</td>
+          <td>${callerNumber}</td>
+          <td>${callee}</td>
+          <td>${duration}</td>
+        </tr>`;
 
     missedCallsTable.innerHTML += row;
   });
@@ -128,14 +133,17 @@ function updateActiveCallsCount_table2() {
   const activeCallsCount = callsRows.length;
   document.getElementById("nbCalls_table2").textContent = activeCallsCount;
   console.log(activeCallsCount);
-
-}
-function updateActiveCallsCount_table3() {
-  const callsRows = document.querySelectorAll("#callsBody_table2 tr");
-  const activeCallsCount = callsRows.length;
-  document.getElementById("nbCalls_table3").textContent = activeCallsCount;
 }
 
+function calculateDuration(now, establishedAt) {
+  const establishedTime = new Date(establishedAt);
+  const nowTime = new Date(now);
+  const durationInSeconds = (nowTime - establishedTime) / 1000;
+  const minutes = Math.floor(durationInSeconds / 60);
+  const seconds = Math.floor(durationInSeconds % 60);
+  return `${minutes} min ${seconds} sec`;
+}
+///___end___table2__functions________________
 
 ///___table3__functions________________
 function displayCallsInfo_table3(data, ids) {
