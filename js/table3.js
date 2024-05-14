@@ -13,9 +13,10 @@ async function fetchDataAndDisplay() {
     // Convertir la réponse en JSON
     const data = await response.json();
 
-    //table 1  Routing
-    displayCallsInfo_table1(data);
-    updateActiveCallsCount_table1();
+    // //  table3  output
+    displayCallsInfo_table3(data);
+    updateActiveCallsCount_table3();
+
 
 
   } catch (error) {
@@ -28,13 +29,15 @@ async function fetchDataAndDisplay() {
 
 fetchDataAndDisplay();
 
-///__________table1__functions________________
-function displayCallsInfo_table1(data) {
-  const callsTable = document.getElementById("callsBody_table1");
+
+
+///___table3__functions________________
+function displayCallsInfo_table3(data) {
+  const callsTable = document.getElementById("callsBody_table3");
   callsTable.innerHTML = "";
 
   const filteredCalls = data.list.filter((call) => {
-    return call.Status === "Routing" || call.Status === "Initiating";
+    return call.Status === "Talking" && Output(call.Callee);
   });
 
   filteredCalls.forEach((call) => {
@@ -54,6 +57,22 @@ function displayCallsInfo_table1(data) {
   });
 }
 
+function Output(callee) {
+  // Expression régulière pour rechercher le mot "Output" dans le champ Caller
+  const regex = /Output/i; // Le "i" signifie que la recherche est insensible à la casse
+
+  // Testez si la chaîne de caractères caller contient le mot "Output"
+  return regex.test(callee);
+}
+
+
+function updateActiveCallsCount_table3() {
+  const callsRows = document.querySelectorAll("#callsBody_table3 tr");
+  const activeCallsCount = callsRows.length;
+  document.getElementById("nbCalls_table3").textContent = activeCallsCount;
+}
+
+
 // Function to extract caller number from caller string
 function extractCallerNumber(callerString) {
   return callerString.match(/\((\d+)\)/)[1];
@@ -65,12 +84,6 @@ function extractCallee(calleeString) {
   return calleeMatch ? calleeMatch[0] : "";
 }
 
-function updateActiveCallsCount_table1() {
-  const callsRows = document.querySelectorAll("#callsBody_table1 tr");
-  const activeCallsCount = callsRows.length;
-  document.getElementById("nbCalls_table1").textContent = activeCallsCount;
-  console.log(activeCallsCount);
-}
 
 function calculateDuration(now, establishedAt) {
   const establishedTime = new Date(establishedAt);
@@ -80,10 +93,7 @@ function calculateDuration(now, establishedAt) {
   const seconds = Math.floor(durationInSeconds % 60);
   return `${minutes} min ${seconds} sec`;
 }
-///________end__table1__functions________________
-
-
-
+///__end_table3__functions________________
 
 
 
